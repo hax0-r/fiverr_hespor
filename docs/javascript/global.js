@@ -1,3 +1,23 @@
+// loader
+
+async function fetchData() {
+  const loader = document.getElementById('loader');
+  loader.style.display = 'flex'; // Show loader
+
+  try {
+    const response = await fetch('https://api.example.com/data');
+    const data = await response.json();
+    // render your data here
+  } catch (error) {
+    console.error("Error loading data:", error);
+  } finally {
+    loader.style.display = 'none'; // Hide loader
+  }
+}
+
+// Call the function on load
+window.addEventListener('load', fetchData);
+
 const lenis = new Lenis({
   autoRaf: true,
 });
@@ -25,15 +45,15 @@ document.addEventListener("DOMContentLoaded", function () {
   });
 });
 
- // JavaScript to play/pause on hover
-  document.querySelectorAll('.group').forEach((card) => {
-    const video = card.querySelector('video');
-    card.addEventListener('mouseenter', () => video.play());
-    card.addEventListener('mouseleave', () => {
-      video.pause();
-      video.currentTime = 0; // Reset to start
-    });
+// JavaScript to play/pause on hover
+document.querySelectorAll('.group').forEach((card) => {
+  const video = card.querySelector('video');
+  card.addEventListener('mouseenter', () => video.play());
+  card.addEventListener('mouseleave', () => {
+    video.pause();
+    video.currentTime = 0; // Reset to start
   });
+});
 
 AOS.init({
   once: true,
