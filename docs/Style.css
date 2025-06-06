@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Gothic+A1:wght@300;400;500;600;700;800;900&display=swap');
+
+.Gothic {
+    font-family: "Gothic A1", sans-serif;
+}
+
+@font-face {
+    font-family:le ;
+    src: url(/docs/assets/fonts/le_jour_script/Le\ Jour\ Script\ Personal\ Use\ Only.otf);
+}
+
+.le{
+    font-family: "le", sans-serif;
+}
+
 @font-face {
     font-family: gotham;
     src: url(/docs/assets/fonts/Gotham-Book.otf) format("opentype");
@@ -28,8 +43,13 @@
 * {
     box-sizing: border-box;
     outline: none;
-    font-family: "Poppins", sans-serif;
+    font-family: "gotham";
     scroll-behavior: smooth;
+}
+
+html,
+body {
+    height: 100%;
 }
 
 img,
